@@ -18,15 +18,15 @@ Your implementation of scan_token should take the same general approach as strto
   char *first_del = first_non_del + strspn(first_non_del, delimeters); //first char contained in delimeters
   
   int token_len = first_del - first_non_del; //getting token len
+  int less_len_flag = 0; //flag that raises when token does not fit in buf
+  
   if(buflen < token_len){ //if token does not fit in buf
-    
-  }
-  else{ //token fits in buf
+    less_len_flag = 1; //activating flag
   }
   
-  
-  for(size_t i = 0; i < n && strcmp(first_non_del; i++){
-    *buf++ = *first_non_del++;
+  char *buf_ptr = buf; //copy pointer so that pointer to beginning of string is not lost
+  for(size_t i = 0; i < n && *first_non_del != *first_del; i++){
+    *buf_ptr++ = *first_non_del++;
   }
 }
 
